@@ -7,14 +7,17 @@ import * as BooksAPI from "./utils/BooksAPI";
 import _ from "lodash";
 import HTML5Backend from "react-dnd-html5-backend";
 import { DragDropContext } from "react-dnd";
+import { Spinner, Pane } from "evergreen-ui";
 
 class BooksApp extends React.Component {
   state = {
-    books: []
+    books: [],
+    loading: true
   };
   async componentDidMount() {
     this.setState({
-      books: await BooksAPI.getAll()
+      books: await BooksAPI.getAll(),
+      loading: !this.state.loading
     });
   }
   handleChange = (bookHandle, bookShelf) => {
@@ -26,7 +29,19 @@ class BooksApp extends React.Component {
     });
   };
   render() {
-    const { books } = this.state;
+    const { books, loading } = this.state;
+    if (loading) {
+      return (
+        <Pane
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          height={700}
+        >
+          <Spinner size={320} />
+        </Pane>
+      );
+    }
     return (
       <div className="app">
         <Route
