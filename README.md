@@ -23,7 +23,8 @@ npm test
 
 The project is organized in the following way:
 
-- src    
+- src
+  - cypress
   - components
   - icons
   - pages
