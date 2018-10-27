@@ -1,5 +1,5 @@
 # my-reads
- My reads is the first React project made for the React Udacity Nanodegree program.
+ My reads it's a bookcase application  made for the React Udacity Nanodegree program.
 
 ## Instalation
 
@@ -12,6 +12,11 @@ After the installation of the libs and dependencies, start the project executing
 
 ```javascript
 npm start
+```
+## Test
+All test were made using cypress framework, after executing the command run all tests available.
+```javascript
+npm test
 ```
 
 ## Organization
@@ -38,6 +43,7 @@ Name | Function
 lodash | A modern JavaScript utility library delivering modularity, performance & extras.
 react-dnd | React DnD is a set of React higher-order components to help you build complex drag and drop interfaces
 evergreen-ui | Evergreen is a React UI Framework for building ambitious products on the web.
+cypress | Cypress is free, open source, and locally installed front end testing tool. It can be used by developers or QA engineers, who build web applications using JavaScript framework.
 
 
 ## License
