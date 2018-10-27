@@ -14,7 +14,7 @@ After the installation of the libs and dependencies, start the project executing
 npm start
 ```
 ## Test
-All test were made using cypress framework, after executing the command run all tests available.
+All tests were made using cypress framework, after executing the command run all tests available.
 ```javascript
 npm test
 ```
