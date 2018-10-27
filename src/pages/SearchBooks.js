@@ -63,7 +63,9 @@ class SearchBooks extends Component {
                   )
                 )
                 .map(book => (
-                  <Book key={book.id} book={book} handleChange={handleChange} />
+                    <li key={book.id}>
+                  <Book  book={book} handleChange={handleChange} />
+                    </li>
                 ))}
           </ol>
         </div>

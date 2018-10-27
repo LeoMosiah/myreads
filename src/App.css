@@ -28,7 +28,7 @@ body,
   flex: 1;
 }
 
-.list-books{
+.list-books {
   background-color: #eee;
 }
 .list-books-content {
@@ -158,7 +158,7 @@ body,
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #3f51b5;;
+  background: #3f51b5;
   background-image: url("./icons/arrow-drop-down.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -182,7 +182,4 @@ body,
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
-}
-.centered{
-  margin: 0 auto;
 }

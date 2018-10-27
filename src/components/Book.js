@@ -4,8 +4,8 @@ import * as PropTypes from "prop-types";
 
 function Book(props) {
   const { book, handleChange } = props;
-  const bookHasImageLink = book =>
-    book.imageLinks !== undefined ? book.imageLinks.thumbnail : null;
+  const getImageLink = book =>
+    book.imageLinks !== undefined ? book.imageLinks.thumbnail : "";
   return (
     <div className="book">
       <div className="book-top">
@@ -14,7 +14,7 @@ function Book(props) {
           style={{
             width: 128,
             height: 193,
-            backgroundImage: `url(${bookHasImageLink(book)})`
+            backgroundImage: `url(${getImageLink(book)})`
           }}
         />
         <BookShelfChanger handleChange={handleChange} book={book} />
@@ -27,7 +27,7 @@ function Book(props) {
 
 function BookShelfChanger(props) {
   const { book, handleChange } = props;
-  const bookHasShelf = shelf => (shelf !== undefined ? shelf : "none");
+  const getShelf = shelf => (shelf !== undefined ? shelf : "none");
   return (
     <div className="book-shelf-changer">
       <SelectMenu
@@ -41,7 +41,7 @@ function BookShelfChanger(props) {
           { label: "Read", value: "read" },
           { label: "None", value: "none" }
         ]}
-        selected={bookHasShelf(book.shelf)}
+        selected={getShelf(book.shelf)}
         onSelect={item => handleChange(book, item.value)}
       >
         <Button style={{ opacity: 0 }} />
@@ -53,6 +53,6 @@ function BookShelfChanger(props) {
 export default Book;
 
 Book.propTypes = {
-  book: PropTypes.array.isRequired,
+  book: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired
 }

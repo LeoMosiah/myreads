@@ -32,12 +32,13 @@ function BookShelf(props) {
           {shelfBooks
             .filter(book => book.shelf === _.camelCase(shelfTitle))
             .map(book => (
+                <li key={book.id}>
               <DraggableBook
-                key={book.id}
                 book={book}
                 handleChange={handleChange}
                 handleDrop={handleDrop}
               />
+                </li>
             ))}
         </ol>
       </div>
