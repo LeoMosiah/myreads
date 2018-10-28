@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "evergreen-ui": "4.0.0",
-    "lodash": "latest",
+    "lodash": "4.17.11",
     "prop-types": "15.6.2",
     "react": "16.5.2",
     "react-debounce-input": "3.2.0",
@@ -17,7 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "cypress": "^3.1.0"
+    "cypress": "3.1.0",
+    "start-server-and-test": "1.7.5"
   }
 }
